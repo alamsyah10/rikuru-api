@@ -6,8 +6,6 @@ router = APIRouter()
 @router.post("/candidate-file-processor", response_model=FileProcessingResponse)
 async def candidate_file_processor(fileProcessingRequest : FileProcessingReqquest):
 
-    import pandas as pd
-
     # Load the file
     inputData = FileProcessingReqquest
     data = pd.read_json(inputData)
