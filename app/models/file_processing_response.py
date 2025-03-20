@@ -3,7 +3,8 @@ from typing import List, Optional
 from fastapi import HTTPException
 
 class Candidate(BaseModel):
-    id: Optional[int]
+    no: int
+    id: Optional[str]
     age: Optional[int]
     birthday: Optional[str]
     currentAffiliation: Optional[str]

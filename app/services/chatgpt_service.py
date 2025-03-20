@@ -26,7 +26,6 @@ def call_gpt(text: str, prompt: str) -> dict:
                 {"role": "user", "content": text}
             ]   
         )
-        print(f"gpt_response: {response.choices[0].message.content}")
         return {"response": response.choices[0].message.content}
     
     except Exception as e:
