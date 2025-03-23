@@ -8,6 +8,7 @@ router = APIRouter()
 
 @router.post("/candidate-file-processor", response_model=FileProcessingRequest)
 async def candidate_file_processor(request: FileProcessingRequest):
-    candidate_sorting_service(request.candidates, request.priorities)
-    print(f"request: {request.priorities}")
-    return request
+    sorted_data = candidate_sorting_service(request.candidates, request.priorities)
+    response = FileProcessingRequest(candidates=sorted_data, priorities=request.priorities)
+    # print(f"request: {request.priorities}")
+    return response
